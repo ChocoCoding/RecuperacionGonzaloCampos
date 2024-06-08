@@ -39,6 +39,6 @@ class ListadoActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+        binding.btnListadoAtras.setOnClickListener { startActivity(Intent(this, SecondActivity::class.java)) }
     }
 }

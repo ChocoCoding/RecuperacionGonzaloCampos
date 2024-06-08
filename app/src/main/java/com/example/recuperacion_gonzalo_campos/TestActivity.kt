@@ -1,5 +1,6 @@
 package com.example.recuperacion_gonzalo_campos
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -12,29 +13,47 @@ class TestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var cont1 = 0
+        var cont2= 0
+        var cont3= 0
+
 
         binding.radioGroup1.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
-                R.id.r1 -> Toast.makeText(this, "Has acertado", Toast.LENGTH_SHORT).show()
-                R.id.r2 -> Toast.makeText(this, "Has fallado", Toast.LENGTH_SHORT).show()
-                R.id.r3 -> Toast.makeText(this, "Has fallado", Toast.LENGTH_SHORT).show()
+                R.id.r1 -> cont1++
+                R.id.r2 -> cont1 = comprobarContador(cont1)
+                R.id.r3 -> cont1 = comprobarContador(cont1)
             }
         }
 
         binding.RadioGroup2.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
-                R.id.r4 -> Toast.makeText(this, "Has fallado", Toast.LENGTH_SHORT).show()
-                R.id.r5 -> Toast.makeText(this, "Has fallado", Toast.LENGTH_SHORT).show()
-                R.id.r6 -> Toast.makeText(this, "Has acertado", Toast.LENGTH_SHORT).show()
+                R.id.r4 -> cont2 = comprobarContador(cont2)
+                R.id.r5 -> cont2 = comprobarContador(cont2)
+                R.id.r6 -> cont2++
             }
         }
 
         binding.RadioGroup3.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
-                R.id.r7 -> Toast.makeText(this, "Has fallado", Toast.LENGTH_SHORT).show()
-                R.id.r8 -> Toast.makeText(this, "Has fallado", Toast.LENGTH_SHORT).show()
-                R.id.r9 -> {Toast.makeText(this, "Has acertado", Toast.LENGTH_SHORT).show()}
+                R.id.r7 -> cont3 = comprobarContador(cont3)
+                R.id.r8 -> cont3 = comprobarContador(cont3)
+                R.id.r9 -> cont3++
             }
         }
+        binding.btnTestAtras.setOnClickListener { startActivity(Intent(this, SecondActivity::class.java)) }
+
+        binding.btnEnviarTest.setOnClickListener{
+            var contTotal = cont1+cont2+cont3
+            Toast.makeText(this,"Has acertado $contTotal",Toast.LENGTH_SHORT).show()
+        }
     }
+}
+
+fun comprobarContador(cont:Int):Int{
+    var nuevoCont = 0
+    if (cont > 0){
+        nuevoCont = 0;
+    }
+    return nuevoCont;
 }

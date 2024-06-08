@@ -7,19 +7,26 @@
     tools:context=".TestActivity">
 
     <ScrollView
-        android:layout_width="412dp"
-        android:layout_height="731dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:id="@+id/scrollView3"
+        android:layout_width="410dp"
+        android:layout_height="657dp"
+        android:layout_marginEnd="1dp"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="vertical">
 
             <RadioGroup
                 android:id="@+id/radioGroup1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:paddingLeft="10sp"
                 android:paddingTop="30sp"
                 android:textAlignment="center">
@@ -112,8 +119,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/respuesta9" />
+
             </RadioGroup>
+
+            <Button
+                android:id="@+id/btnEnviarTest"
+                android:layout_width="288dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="226dp"
+                android:layout_marginRight="226dp"
+                android:gravity="center|right"
+                android:insetLeft="200dp"
+                android:text="@string/enviar_test"
+                android:translationX="120dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RadioGroup3"
+                tools:ignore="RtlHardcoded" />
+
         </LinearLayout>
     </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/test"
+        app:titleMarginStart="120sp"
+        app:titleTextColor="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="2dp" />
+
+    <ImageButton
+        android:id="@+id/btnTestAtras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_action_name"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

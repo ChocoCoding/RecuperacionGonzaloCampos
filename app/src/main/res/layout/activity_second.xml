@@ -10,6 +10,7 @@
     tools:context=".SecondActivity">
 
     <ScrollView
+        android:id="@+id/contadorArticulos"
         android:layout_width="233dp"
         android:layout_height="452dp"
         android:layout_marginStart="97dp"
@@ -44,10 +45,37 @@
                 app:icon="@android:drawable/radiobutton_off_background" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btnContadorArticulos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Contador Articulos" />
         </LinearLayout>
     </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/menu"
+        app:titleMarginStart="180sp"
+        app:titleTextColor="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageButton
+        android:id="@+id/btnSecondScreenAtras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.604"
+        app:srcCompat="@drawable/ic_action_name"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

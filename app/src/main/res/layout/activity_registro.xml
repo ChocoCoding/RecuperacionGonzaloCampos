@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#FFC107"
     tools:context=".RegistroActivity">
 
     <EditText
@@ -11,26 +12,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="101dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="@string/hint_usuario"
         android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/txtContra"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/txtContra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="101dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="@string/hint_password"
         android:inputType="text|textPassword|textAutoComplete"
+        app:layout_constraintBottom_toTopOf="@+id/txtVerPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtUsuario" />
 
@@ -38,26 +45,28 @@
         android:id="@+id/txtRepetirContra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="99dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="102dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="101dp"
         android:ems="10"
         android:hint="@string/repetir_contraseña"
         android:inputType="text|textPassword|textAutoComplete"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtVerPassword"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="126dp"
+        android:layout_height="53dp"
         android:layout_marginStart="162dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="128dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="101dp"
+        android:backgroundTintMode="add"
         android:text="@string/mod_registrar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRepetirContra"
         tools:ignore="MissingConstraints" />
@@ -67,11 +76,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="213dp"
-        android:layout_marginTop="26dp"
         android:layout_marginEnd="101dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/ver_contraseña"
+        app:layout_constraintBottom_toTopOf="@+id/txtRepetirContra"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtContra"
         tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:contextClickable="true"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/mod_registrar"
+        app:titleMarginStart="140sp"
+        app:titleTextColor="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <ImageButton
+        android:id="@+id/btnAtrasRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_action_name"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

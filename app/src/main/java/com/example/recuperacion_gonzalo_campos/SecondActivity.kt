@@ -16,6 +16,8 @@ class SecondActivity : AppCompatActivity() {
 
         binding.btnListado.setOnClickListener { startActivity(Intent(this, ListadoActivity::class.java)) }
         binding.btnTest.setOnClickListener { startActivity(Intent(this, TestActivity::class.java)) }
+        binding.btnContadorArticulos.setOnClickListener { startActivity(Intent(this, ContadorActivity::class.java)) }
+        binding.btnSecondScreenAtras.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
 
     }
 

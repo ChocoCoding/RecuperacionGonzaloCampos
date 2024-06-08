@@ -6,6 +6,7 @@
     <string name="ver_contraseña">Ver Contraseña</string>
     <string name="repetir_contraseña">Repetir Contraseña</string>
     <string name="log_in">Log in</string>
+    <string name="login">Login</string>
     <string name="debes_introducir_un_nombre_de_usuario">Debes introducir un nombre de usuario</string>
     <string name="debes_introducir_una_contrase_a">Debes introducir una contraseña</string>
     <string name="la_contrase_a_debe_ser_superior_a_7_caracteres">La contraseña debe ser superior a 7 caracteres</string>
@@ -30,6 +31,14 @@
     <string name="saltarin">Saltarin</string>
     <string name="delfin">Delfin</string>
     <string name="mas_info">Mas informacion</string>
+    <string name="voler">Volver</string>
+    <string name="menu">Menu</string>
+    <string name="listado">Listado</string>
+    <string name="test">Test del pescador</string>
+    <string name="enviar_test">Enviar</string>
+    <string name="han_picado">Han picado</string>
+    <string name="haz_click_imagen">Haz click en la imagen</string>
+    <string name="contador">Contador</string>
 
 
 
