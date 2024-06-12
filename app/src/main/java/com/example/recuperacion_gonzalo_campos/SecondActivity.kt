@@ -14,10 +14,23 @@ class SecondActivity : AppCompatActivity() {
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnListado.setOnClickListener { startActivity(Intent(this, ListadoActivity::class.java)) }
-        binding.btnTest.setOnClickListener { startActivity(Intent(this, TestActivity::class.java)) }
-        binding.btnContadorArticulos.setOnClickListener { startActivity(Intent(this, ContadorActivity::class.java)) }
-        binding.btnSecondScreenAtras.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
+        val user = intent.getStringExtra("NOMBRE").toString()
+
+        binding.textUsuarioLogeado.text = user
+
+        val intentListado = Intent(this,ListadoActivity::class.java)
+        intentListado.putExtra("NOMBRE",user)
+        val intentTest = Intent(this,TestActivity::class.java)
+        intentTest.putExtra("NOMBRE",user)
+        val intentContadorArticulos = Intent(this,ContadorActivity::class.java)
+        intentContadorArticulos.putExtra("NOMBRE",user)
+        val intentSecondScreenAtras = Intent(this,MainActivity::class.java)
+        intentSecondScreenAtras.putExtra("NOMBRE",user)
+
+        binding.btnListado.setOnClickListener { startActivity(Intent(intentListado)) }
+        binding.btnTest.setOnClickListener { startActivity(Intent(intentTest)) }
+        binding.btnContadorArticulos.setOnClickListener { startActivity(Intent(intentContadorArticulos)) }
+        binding.btnSecondScreenAtras.setOnClickListener { startActivity(Intent(intentSecondScreenAtras)) }
 
     }
 

@@ -11,18 +11,20 @@ import com.example.recuperacion_gonzalo_campos.databinding.ActivityContadorBindi
 
 class ContadorActivity : AppCompatActivity() {
     private lateinit var binding : ActivityContadorBinding
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "StringFormatMatches")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityContadorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val user = intent.getStringExtra("NOMBRE").toString()
+
         var cont = 8;
-        binding.Texto.text = "Haz click $cont veces más"
+        binding.Texto.text = getString(R.string.haz_click_veces_m_s, cont)
 
         binding.imagePescador.setOnClickListener{
             cont--
-            binding.Texto.text = "Haz click $cont veces más"
+            binding.Texto.text = getString(R.string.haz_click_veces_m_s2, cont)
             updateTextColor(cont)
             if (cont == 0){
                 binding.imagePescador.visibility = android.view.View.INVISIBLE
@@ -33,7 +35,10 @@ class ContadorActivity : AppCompatActivity() {
         }
 
         binding.btnContadorAtras.setOnClickListener{
-            startActivity(Intent(this,SecondActivity::class.java))
+            val intentContadorAtras = Intent(this,SecondActivity::class.java)
+            intentContadorAtras.putExtra("NOMBRE",user)
+            startActivity(Intent(intentContadorAtras))
+
         }
 
     }
@@ -47,3 +52,4 @@ class ContadorActivity : AppCompatActivity() {
         binding.Texto.setTextColor(color)
     }
 }
+

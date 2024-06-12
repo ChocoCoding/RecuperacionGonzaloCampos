@@ -60,7 +60,8 @@
         app:titleMarginStart="160sp"
         app:titleTextColor="#FFFFFF"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="2dp" />
+        tools:layout_editor_absoluteY="2dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/btnContadorAtras"
@@ -68,5 +69,6 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_action_name"
         tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="8dp" />
+        tools:layout_editor_absoluteY="8dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

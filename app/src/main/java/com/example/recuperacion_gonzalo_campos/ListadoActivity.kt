@@ -15,6 +15,9 @@ class ListadoActivity : AppCompatActivity() {
         binding = ActivityListadoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val user = intent.getStringExtra("NOMBRE").toString()
+        intent.putExtra("NOMBRE",user)
+
         var url = "";
         val intent = Intent(Intent.ACTION_VIEW)
 
@@ -39,6 +42,10 @@ class ListadoActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnListadoAtras.setOnClickListener { startActivity(Intent(this, SecondActivity::class.java)) }
+        binding.btnListadoAtras.setOnClickListener {
+            val intentContadorAtras = Intent(this,SecondActivity::class.java)
+            intentContadorAtras.putExtra("NOMBRE",user)
+            startActivity(Intent(intentContadorAtras))
+        }
     }
 }

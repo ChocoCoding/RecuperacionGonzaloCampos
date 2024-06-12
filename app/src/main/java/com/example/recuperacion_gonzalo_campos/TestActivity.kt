@@ -13,11 +13,14 @@ class TestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val user = intent.getStringExtra("NOMBRE").toString()
+        intent.putExtra("NOMBRE",user)
         var cont1 = 0
         var cont2= 0
         var cont3= 0
 
-
+        // _ Es para indicar que no necesitamos el parametro de grupo
         binding.radioGroup1.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 R.id.r1 -> cont1++
@@ -41,7 +44,10 @@ class TestActivity : AppCompatActivity() {
                 R.id.r9 -> cont3++
             }
         }
-        binding.btnTestAtras.setOnClickListener { startActivity(Intent(this, SecondActivity::class.java)) }
+        binding.btnTestAtras.setOnClickListener {
+            val intentContadorAtras = Intent(this,SecondActivity::class.java)
+            intentContadorAtras.putExtra("NOMBRE",user)
+            startActivity(Intent(intentContadorAtras)) }
 
         binding.btnEnviarTest.setOnClickListener{
             var contTotal = cont1+cont2+cont3

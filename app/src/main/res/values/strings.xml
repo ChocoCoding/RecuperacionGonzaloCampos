@@ -39,7 +39,8 @@
     <string name="han_picado">Han picado</string>
     <string name="haz_click_imagen">Haz click en la imagen</string>
     <string name="contador">Contador</string>
-
+    <string name="haz_click_veces_m_s">Haz click %1$s veces más</string>
+    <string name="haz_click_veces_m_s2">Haz click %1$s veces más</string>
 
 
 </resources>
